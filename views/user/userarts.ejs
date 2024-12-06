@@ -1,0 +1,103 @@
+<% layout('layout/boilerplate') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Arts and Crafts</title>
+  
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Link to custom styles (if any) -->
+  <style>
+    .arts-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .arts-list li {
+      margin: 10px 0;
+    }
+    .arts-list a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+    .arts-list img {
+      border-radius: 8px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .no-arts-message {
+      font-size: 1.1rem;
+      color: #666;
+    }
+    .card-img-top {
+      border-radius: 8px;
+      height: 20rem;
+      object-fit: cover;
+    }
+
+    /* Black spot overlay */
+    .image-container {
+      position: relative;
+    }
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5); /* Black spot */
+      width: 150px;
+      height: 150px;
+      border-radius: 50%; /* Circular shape for the black spot */
+      display: block;
+    }
+
+    .card-body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+
+
+  <!-- Page Content -->
+  <div class="container my-4">
+    <h1>Your Arts and Crafts</h1>
+    
+    <!-- Display the list of arts -->
+    <div class="arts-list">
+      <% if (arts.length > 0) { %>
+        <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+          <% arts.forEach(art => { %>
+            <li class="col">
+              <div class="card h-100 lists-card">
+                <div class="image-container ">
+                  <img src="<%= art.image %>" alt="<%= art.title %>" class="card-img-top">
+                  <!-- Black spot overlay -->
+                  <div class="overlay"></div>
+                </div>
+                <div class="card-body mt-3">
+                  <b><%= art.title %></b>
+                </div>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p class="no-arts-message">You haven't added any arts yet. Add some arts to showcase!</p>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js (for Bootstrap components) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

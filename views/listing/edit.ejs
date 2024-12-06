@@ -1,0 +1,42 @@
+<% layout('layout/boilerplate') %>
+<body>
+  <form action="/home/<%= list._id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+    <h3>Edit Your Artwork</h3>
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input class="form-control" type="text" value="<%= list.title %>" id="title" placeholder="Enter the title of your artwork" name="list[title]" required>
+      <div class="invalid-feedback">
+        Please fill the title
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="artist" class="form-label">Artist Name</label>
+      <input type="text" class="form-control" value="<%= list.artist %>" id="artist" placeholder="Enter the artist name" name="list[artist]" required>
+      <div class="invalid-feedback">
+        Please fill the artist name
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Describe your creation</label>
+      <textarea id="description" class="form-control" name="list[description]"><%= list.description %></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Image Source</label>
+      <input type="text" id="image" value="<%= list.image %>" class="form-control" placeholder="Enter image URL" name="list[image]">
+    </div>
+
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <input type="text" id="category" class="form-control" value="<%= list.category %>" placeholder="Enter category" name="list[category]">
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-outline-success">Update Artwork</button>
+    </div>
+  </form>
+</body>
+<script src="/js/script.js"></script>

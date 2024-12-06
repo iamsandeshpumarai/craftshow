@@ -1,0 +1,54 @@
+<% layout('layout/boilerplate') %>
+<body>
+    <div class="row">
+<div class="col-8 offset-2">
+
+    <form action="/home" method="POST" novalidate class="needs-validation">
+        <h3>Add Your Art</h3>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input class="form-control" type="text" id="title" placeholder="Enter the title of your artwork" name="list[title]" required>
+            <div class="invalid-feedback">
+                Please Fill the Title
+              </div>
+              
+              <div class="valid-feedback">
+                Great!
+              </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="artist" class="form-label">Artist Name</label>
+            <input type="text" class="form-control" id="artist" placeholder="enter the  artistname" name="list[artist]" required>
+            <div class="invalid-feedback">
+               Fill the artist name
+              </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Describe your creation</label>
+            <textarea  id="description" class="form-control"  name="list[description]" required>i love mine creation</textarea>
+            <div class="invalid-feedback">
+                Describe your Art
+              </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="image" class="form-label">Image Source</label>
+            <input type="text" id="image" class="form-control" placeholder="imagelink" name="list[image]">
+        </div>
+        
+        
+        <div class="mb-3">
+            <label for="category" class="form-label">category</label>
+            <input type="text" id="category" class="form-control" placeholder="category" name="list[category]">
+        </div>
+        <div class="mb-3">
+            
+            <button type="submit" class="btn btn-outline-success">Add Your Art</button>
+        </div>
+    </form>
+</body>
+
+</div>
+</div>

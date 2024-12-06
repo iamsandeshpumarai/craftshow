@@ -1,0 +1,23 @@
+<% layout('layout/boilerplate') %>
+<body>
+    <div class="row">
+        <div class="row row-col-lg-4 row row-col-md-3 row row-col-sm-1">
+            <h3>Search Results for: "<%= query %>"</h3>
+            
+            <% if (list.length === 0) { %>
+                <p>No results found.</p>
+            <% } else { %>
+                <% list.forEach(function(listing) { %>
+                    <div class="card list-card" style="width: 18rem;">
+                        <img src="<%= listing.image %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= listing.title %></h5>
+                            <p class="card-text"><%= listing.artist %></p>
+                            <a href="/home/<%= listing._id %>" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+</body>

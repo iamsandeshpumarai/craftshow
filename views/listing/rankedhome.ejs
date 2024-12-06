@@ -1,0 +1,89 @@
+<% layout('layout/boilerplate') %>
+<h3>Ranked by Likes</h3>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <% listings.forEach(function(list) { %>
+        <div class="col">
+            <div class="card list-card" style="width: 100%;">
+                <div class="image-container">
+                    <img src="<%=list.image %>" class="card-img-top image-top" alt="<%= list.title %>" style="height: 20rem;">
+                    <div class="">
+                        <a href="/home/<%= list._id %>">
+                         
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body mt-3">
+                    <b> <%= list.title %> </b>
+                    <p class="card-text">Likes: <%= list.likes %></p>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<!-- Add your custom CSS for the blur effect and other styling -->
+<style>
+    .list-card {
+        position: relative;
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden; /* Ensures image stays within the container bounds */
+    }
+
+    .image-top {
+        transition: all 0.3s ease;
+        width: 100%; /* Make sure the image is responsive */
+    }
+
+    /* Blur effect on hover */
+    .image-container:hover .image-top {
+        filter: blur(5px); /* Apply blur effect */
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Keep the overlay visible when hovering */
+    /* .image-container:hover .overlay {
+        opacity: 1;
+    } */
+
+    /* Style for the "See Details" button */
+    .details-btn {
+        color: white;
+        border: 1px solid white;
+        background-color: transparent;
+        padding: 10px 20px;
+        font-size: 0.9rem; /* Smaller text */
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .details-btn .text {
+        margin-right: 5px;
+    }
+
+    /* Ensures the button stays on top of the image */
+    .zoom-overlay {
+        z-index: 10; /* Ensure the overlay appears above the image */
+    }
+
+    /* Add some spacing between card body text and button */
+    .card-body {
+        position: relative;
+    }
+</style>

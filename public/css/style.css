@@ -1,0 +1,582 @@
+
+body{
+    background-color: lime;
+    font-family: "Merriweather", serif !important;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.container{
+    flex: 1;
+}
+.navbar{
+    height: 5rem;
+    color: #6979b2 !important;
+
+}
+.fa-house{
+    background-color: white;
+    font-size: 25px;
+}
+.navbars {
+    background-color: rgba(196, 188, 173, 0.43);
+    backdrop-filter: blur(10px);
+   
+  }
+  .fa-solid:before{
+    background-color: rgba(196, 188, 173, 0.43) !important;
+    border:  rgba(196, 188, 173, 0.43) !important;;
+  }
+  .footers{
+    
+        background: rgba(196, 188, 173, 0.43) !important;
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+  }
+  /* cards  */
+  .list-card{
+    border: none !important;
+    margin-bottom:3rem;
+    margin: 1rem;
+  }
+  .card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+  .card-body{
+    padding: 0 !important;
+  }
+  .card-text p{
+    font-weight:400 !important ;
+  }
+
+  .formss{
+    display: flex;
+
+  }
+ .nav-item a{
+  text-decoration: none;
+  color: black;
+ }
+ .nav-item{
+  display: flex;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin: 20px;
+      
+ }
+ .navbar .user-menu {
+  position: relative;
+}
+.navbar .user-menu .dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the icon */
+  right: 0;
+  display: none;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.navbar .user-menu:hover .dropdown-menu {
+  display: block; /* Show menu on hover or click */
+}
+.navbar .user-menu .dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.navbar .user-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+/* Style for search form */
+/* Style for search form */
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the search form to the right */
+}
+
+.search-input {
+  width: 250px; /* Adjust the width to make the search input more compact */
+  border-radius: 20px;
+}
+
+.search-btn {
+  margin-left: 10px;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 16px;
+}
+
+/* Make search input and button visually cleaner and more compact */
+.navbar .form-inline .form-control {
+  width: 250px; /* Adjust size */
+  height: 38px; /* Adjust height */
+  border-radius: 20px; /* Rounded corners */
+  padding-left: 10px;
+}
+
+.navbar .form-inline .btn {
+  height: 38px; /* Match height of search input */
+  border-radius: 20px; /* Rounded corners */
+  padding: 0 15px; /* Add padding for button */
+}
+
+/* Style button for a better look */
+.search-btn {
+  background-color: #28a745; /* Green color */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Custom Card Styling */
+.custom-card {
+  margin-top: 20px;
+}
+
+.custom-image {
+  width: 100%; /* Image will take full width of its container */
+  max-height: 300px; /* Make image a bit bigger */
+  object-fit: cover;
+}
+
+/* Card Body Styling */
+.card-body {
+  padding: 20px;
+}
+
+.card-body h5, .card-body p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+/* Layout adjustment for image and text */
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.card-img-top.custom-image {
+  border-radius: 10px;
+}
+
+.card-body b {
+  font-weight: bold;
+}
+
+/* Feedback form styling */
+.formss form {
+  margin-top: 20px;
+}
+
+.review-card {
+  margin-top: 20px;
+}
+
+/* Responsive Layout for Image and Text */
+@media (max-width: 768px) {
+  .custom-card {
+      flex-direction: column;
+  }
+  .card-img-top.custom-image {
+      max-height: 250px; /* Smaller image for mobile */
+  }
+}
+
+/* Footer Styles */
+.footers {
+  background-color: #222;  /* Darker background */
+  color: #fff;  /* White text for high contrast */
+  padding: 40px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin-top: 50px;
+  border-top: 2px solid #ff6347;  /* Adding a border for emphasis */
+}
+
+/* Follow Us Section */
+.fa-info h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Social Media Icons */
+.social-media {
+  margin: 20px 0;
+}
+
+.social-icon {
+  font-size: 35px;  /* Increase icon size for better visibility */
+  color: #fff;
+  margin: 0 20px;  /* More space between icons */
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ff6347;  /* Hover color */
+  transform: scale(1.3);  /* Slight enlarge effect */
+}
+
+/* Info Links Section */
+.info-links {
+  margin-top: 20px;
+}
+
+.info-link {
+  color: #fff;
+  margin: 0 20px;
+  font-size: 18px;  /* Slightly larger font size */
+  text-decoration: none;
+  font-weight: bold;  /* Make links bold */
+  transition: color 0.3s ease;
+}
+
+.info-link:hover {
+  color: #ff6347;  /* Hover effect */
+}
+
+/* Additional Footer Text */
+footer b {
+  display: block;
+  margin-top: 20px;
+  font-size: 18px;  /* Make the copyright text a bit bigger */
+  font-weight: bold;
+  color: #fff;
+}
+
+.dmca-policy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dmca-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.dmca-header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.dmca-header p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.dmca-content h2 {
+  font-size: 1.5rem;
+  color: #2980b9;
+  margin-top: 20px;
+}
+
+.dmca-content ol {
+  margin-left: 20px;
+}
+
+.dmca-content li {
+  margin-bottom: 10px;
+}
+
+.dmca-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.dmca-footer b {
+  color: #2980b9;
+}
+.privacy-policy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-header {
+  text-align: center;
+  border-bottom: 3px solid #2980b9;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.privacy-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.privacy-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.privacy-content h2 {
+  font-size: 1.8rem;
+  color: #2980b9;
+  margin-top: 20px;
+}
+
+.privacy-content ul {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+.privacy-content ul li {
+  margin-bottom: 10px;
+}
+
+.privacy-content p {
+  margin-bottom: 15px;
+}
+
+.privacy-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.contact-us-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header {
+  text-align: center;
+  border-bottom: 3px solid #2980b9;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  color: #2980b9;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  color: #2980b9;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1a5a7f;
+}
+
+.contact-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.info-link:hover {
+  color: rgb(255, 99, 71); /* Example RGB color, change this to your desired RGB value */
+}
+
+/* Optional: Hover effect for Follow Us text */
+.follow-us:hover {
+  color: rgb(255, 99, 71); /* Example RGB color */
+}
+
+/* Hover effect for social media icons */
+.social-icon:hover {
+  color: rgb(255, 99, 71); /* Example RGB color for social media icons */
+}
+.search-form {
+  transition: width 0.3s ease;
+  width: 200px; /* Default width */
+}
+
+.search-form.expanded {
+  width: 300px; /* Expanded width */
+}
+.list-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.image-hover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+/* Add animation to the image hover effect */
+.image-hover {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.list-card:hover .image-hover {
+  filter: blur(4px); /* Apply blur effect on hover */
+  transform: scale(1.1); /* Slightly zoom in on hover */
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.details-btn {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.details-btn .text {
+  margin-right: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.details-btn .arrow {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list-card:hover .overlay {
+  opacity: 1;
+  visibility: visible; /* Show the overlay */
+}
+
+.list-card:hover .details-btn {
+  transform: translateX(10px); /* Move the button slightly */
+}
+
+.list-card:hover .details-btn .text {
+  opacity: 1; /* Show "See Details" text */
+}
+
+.list-card:hover .details-btn .arrow {
+  opacity: 1; /* Show the arrow */
+}
+
+.formss {
+  display: flex;
+  align-items: end;
+}
+/* Hover effect for the user dropdown */
+.user-menu:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none; /* Hide by default */
+}
+.lists-card{
+  border: none!important;
+  margin: 12px;
+}

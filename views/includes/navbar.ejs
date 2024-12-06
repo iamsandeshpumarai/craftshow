@@ -1,0 +1,179 @@
+<nav class="navbar navbar-expand-md border-bottom sticky-top navbars">
+  <div class="container-fluid">
+    <!-- Navbar Brand -->
+    <!-- You can add your logo or brand here -->
+
+    <!-- Navbar Toggle Button for Smaller Screens -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left-aligned Nav Links -->
+      <ul class="navbar-nav">
+        <!-- Home Button -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+        </li>
+
+        <!-- Add Your Art Button -->
+        <li class="nav-item">
+          <a class="nav-link" href="/home/new">
+            <i class="fa-solid fa-plus-circle"></i> Add Your Art
+          </a>
+        </li>
+
+        <!-- New Section Added -->
+        <li class="nav-item">
+          <a class="nav-link" href="/home/ranked">
+            <i class="fa-solid fa-trophy"></i> Top Ranked Artworks
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right-aligned Navbar Content -->
+      <div class="right-navbar-content">
+        <!-- Search Icon to Trigger Expansion -->
+        <button class="search-icon-btn" id="searchIconBtn">
+          <i class="fa-solid fa-search"></i>
+        </button>
+
+        <!-- Search Form (Initial Hidden) -->
+        <form action="/home/search" method="GET" class="d-flex ms-auto my-2 my-lg-0 search-form" id="searchForm">
+          <input class="form-control me-2 search-input" type="search" placeholder="Search by title" aria-label="Search" name="query">
+          <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+        </form>
+      </div>
+
+      <!-- Right-aligned User Section -->
+     <!-- Right-aligned User Section -->
+<ul class="navbar-nav ms-auto">
+  <% if (!currUser) { %>
+    <li class="nav-item">
+      <a class="nav-link active" href="/signup">Sign Up</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/login">Log In</a>
+    </li>
+  <% } %>
+
+  <% if (currUser) { %>
+    <!-- User Dropdown -->
+    <li class="nav-item user-menu dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-user"></i> <!-- User Icon -->
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+        <!-- "Your Arts and Crafts" Option -->
+        <li><a class="dropdown-item" href="/user/arts">Your Arts and Crafts</a></li>
+        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+      </ul>
+    </li>
+  <% } %>
+</ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- Custom JavaScript for Expanding Search Bar -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = searchForm.querySelector('.search-input');
+    const searchIconBtn = document.getElementById('searchIconBtn');
+
+    // Toggle expanded state when search icon is clicked
+    searchIconBtn.addEventListener('click', function() {
+      searchForm.classList.toggle('expanded'); // Toggle 'expanded' class to show/hide input
+      searchInput.focus(); // Automatically focus the input when expanded
+      startPlaceholderAnimation(); // Start the continuous placeholder change
+    });
+
+    // Function to continuously change the placeholder text
+    function startPlaceholderAnimation() {
+      let toggle = true;
+      setInterval(function() {
+        if (toggle) {
+          searchInput.placeholder = "Search by title"; // First placeholder
+        } else {
+          searchInput.placeholder = "Search by artist"; // Second placeholder
+        }
+        searchInput.classList.add('pop-up'); // Trigger the "pop-up" effect
+        toggle = !toggle; // Toggle between true/false for placeholder
+      }, 2000); // Change every 2 seconds
+    }
+
+    // Close the search form if user clicks outside the form
+    document.addEventListener('click', function(event) {
+      if (!searchForm.contains(event.target) && !searchIconBtn.contains(event.target)) {
+        searchForm.classList.remove('expanded'); // Collapse the form
+      }
+    });
+  });
+</script>
+
+<!-- Custom CSS for Search Expansion, Pop-Up, and Positioning -->
+<style>
+  .right-navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .search-form {
+    transition: width 0.3s ease;
+    width: 40px; /* Initial width - only the icon */
+    overflow: hidden;
+  }
+
+  .search-form.expanded {
+    width: 250px; /* Expanded width */
+  }
+
+  .search-form .search-input {
+    transition: width 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .search-form.expanded .search-input {
+    opacity: 1;
+  }
+
+  .search-icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: black;
+  }
+
+  .search-icon-btn i {
+    color: black;
+  }
+
+  /* Pop-up effect for placeholder change */
+  .search-input.pop-up::placeholder {
+    animation: pop-up 0.5s ease forwards;
+  }
+
+  @keyframes pop-up {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>

@@ -1,0 +1,69 @@
+<% layout('layout/boilerplate') %>
+<div class="row mt-3">
+    <div class="col-6 offset-3">
+        <form action="/signup" method="POST" class="needs-validation" novalidate>
+            <h3>Sign up</h3>
+
+            <!-- for username  -->
+            <div class="mb-2">
+                <label for="username" class="form-label">Username</label>
+                <input class="form-control" type="text" id="username" name="username" required>
+                <div class="invalid-feedback">
+                    Please Fill The Username!
+                </div>
+                <div class="valid-feedback">
+                    Great!
+                </div>
+            </div>
+
+            <!-- for email -->
+            <div class="mb-2">
+                <label for="email" class="form-label">E-Mail</label>
+                <input class="form-control" type="text" id="email" name="email" required>
+                <div class="invalid-feedback">
+                    Please Fill the Email
+                </div>
+                <div class="valid-feedback">
+                    Great!
+                </div>
+            </div>
+
+            <!-- for password -->
+            <div class="mb-2">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                    <input class="form-control" type="password" id="password" name="password" required>
+                    <button type="button" class="input-group-text" id="togglePassword">
+                        <i class="fa fa-eye" id="eyeIcon"></i> <!-- Eye icon to toggle visibility -->
+                    </button>
+                </div>
+                <div class="invalid-feedback">
+                    Please Fill the Password
+                </div>
+                <div class="valid-feedback">
+                    Great!
+                </div>
+            </div>
+            <button class="btn btn-success">sign up</button>
+        </form>
+    </div>
+</div>
+
+<!-- Include FontAwesome for the Eye Icon (can also be done by linking a CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script>
+    // JavaScript to toggle password visibility
+    const togglePassword = document.querySelector('#togglePassword');
+    const passwordField = document.querySelector('#password');
+    const eyeIcon = document.querySelector('#eyeIcon');
+
+    togglePassword.addEventListener('click', function () {
+        // Toggle the type of the password field between 'password' and 'text'
+        const type = passwordField.type === 'password' ? 'text' : 'password';
+        passwordField.type = type;
+
+        // Toggle the eye icon to show/hide the password
+        eyeIcon.classList.toggle('fa-eye-slash');
+    });
+</script>
